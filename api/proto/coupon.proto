@@ -1,0 +1,25 @@
+syntax = "proto3";
+package coupon;
+option go_package = "github.com/Nileshmaharjan/coupon-service/gen/coupon;coupon";
+import "google/protobuf/timestamp.proto";
+service CouponService {
+  rpc CreateCampaign(CreateCampaignRequest) returns (CreateCampaignResponse);
+  rpc GetCampaign(GetCampaignRequest) returns (GetCampaignResponse);
+  rpc IssueCoupon(IssueCouponRequest) returns (IssueCouponResponse);
+}
+message CreateCampaignRequest {
+  string name = 1;
+  int32 total = 2;
+  google.protobuf.Timestamp start_time = 3;
+}
+message CreateCampaignResponse { string campaign_id = 1; }
+message GetCampaignRequest { string campaign_id = 1; }
+message GetCampaignResponse {
+  string campaign_id = 1;
+  string name = 2;
+  int32 total = 3;
+  google.protobuf.Timestamp start_time = 4;
+  repeated string issued_codes = 5;
+}
+message IssueCouponRequest { string campaign_id = 1; }
+message IssueCouponResponse { string code = 1; string error = 2; }

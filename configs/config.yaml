@@ -1,0 +1,8 @@
+server:
+  port: 8080
+
+database:
+  dsn: "postgresql://postgres.yrhyfzesbhgdyqslrciq:Maharjan232132@aws-0-ap-northeast-2.pooler.supabase.com:5432/postgres?sslmode=require"
+
+store:
+  type: "postgres" # switch to "memory" for memory store
