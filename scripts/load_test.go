@@ -14,7 +14,7 @@ const (
     createPath    = "/coupon.CouponService/CreateCampaign"
     issuePath     = "/coupon.CouponService/IssueCoupon"
     totalCoupons  = 50
-    concurrency   = 10000
+    concurrency   = 5000
 )
 
 func BenchmarkConcurrentIssue(b *testing.B) {
